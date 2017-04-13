@@ -1,0 +1,37 @@
+<head>
+    <meta charset="UTF-8">
+    <!--移动设备优先，自适应窗口-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>一行管理系统</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css" >
+</head>
+<body>
+<section id="content">
+    <form action="account" method="post" name="loginForm">
+        <h1> 一行 管理系统</h1>
+        {{{ message }}}
+        <div>
+            <input type="text" placeholder="账号" required="" id="username" name="userName" />
+        </div>
+        <div>
+            <input type="password" placeholder="密码" required="" id="password" name="Password" />
+        </div>
+        <div>
+            <input type="submit" value="登录" style="margin-left:116px"/>
+        </div>
+    </form><!-- form -->
+    <div class="button">
+        <a href="loginregister">
+            <span class="glyphicon glyphicon-edit"></span>
+            立即注册
+        </a>
+        <a href="forgetPsd">
+            <span class="glyphicon glyphicon-question-sign"></span>
+            忘记密码
+        </a>
+    </div><!-- button -->
+</section><!-- content -->
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+</body>

@@ -1,0 +1,42 @@
+<style>
+    .divAccount{
+        width: 700px;
+        border: 2px dashed #004a80;
+        margin: 0 auto;
+    }
+</style>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="panel">
+            <div class="panel-body">
+                <table class="table table-striped table-hover table-bordered">
+                    <tbody>
+                    <tr>
+                        <td class="col-sm-3">账号名</td>
+                        <td class="col-sm-5">{{userName}}</td>
+                    </tr>
+                    <tr>
+                        <td>账号余额</td>
+                        <td>{{ timeRemain }}</td>
+                    </tr>
+                    <tr>
+                        <td>当月用户数量</td>
+                        <td>{{ userQuantity }}</td>
+                    </tr>
+                    <tr>
+                        <td>在线用户数量</td>
+                        <td>{{ nowUserQuantity }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

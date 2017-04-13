@@ -1,0 +1,118 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--移动设备优先，自适应窗口-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>网站后台管理</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <style type="text/css">
+        .margin25{
+            margin-right: 25px;
+        }
+        /*#margin51{*/
+        /*margin-top: 51px;*/
+        /*}*/
+        #xxcolor{
+            background: mediumpurple;
+        }
+        /*当屏幕分辨率大于768px时，使用以下样式*/
+        @media (min-width: 768px) {
+            #slider_sub{
+                width: 250px;
+                height: 600px;
+                margin-top: 51px;
+                position: absolute;
+                z-index: 1;
+            }
+            .page_main{
+                margin-left: 255px;
+                margin-top: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--导航条-->
+<nav class="navbar navbar-default navbar-static-top" >
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#slider_sub">
+            <span class="sr-only"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">一行 后台管理系统</a>
+        <ul class="nav navbar-nav margin25">
+            <li style="margin-left: 180px;"><a href="#">使用文档</a></li>
+            <li style="margin-left: 150px;"><a href="#">技术交流</a></li>
+            <li style="margin-left: 150px;"><a href="#">资助我</a></li>
+        </ul>
+    </div>
+    <ul class="nav navbar-nav navbar-right margin25">
+        <li><a href="#"><span>欢迎回来，{{userName}}！</span></a></li>
+        <li><a href="#"><span class="badge" id="xxcolor">消息</span></a></li>
+        <li><a href="changePsd"><button type="button" class="btn btn-warning btn-xs">修改密码</button></a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon-off"></span>&nbsp;退出</a></li>
+    </ul>
+
+
+    <!--侧边栏    -->
+    <div class="navbar-default navbar-collapse" id="slider_sub">
+        <ul class="nav" style="margin-top: 45px;">
+            <li><a href="account">
+                &nbsp;<span class="glyphicon glyphicon-user"></span>
+                &nbsp;账号信息
+            </a></li>
+
+            <li onclick="refreshApp()">
+                <a href="#sub2" data-toggle="collapse">
+                    &nbsp;<span class="glyphicon glyphicon-th-list"></span>
+                    &nbsp;我的应用
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </a>
+
+                <ul id="sub2" class="nav collapse" >
+                    <li id="newApp"></li>
+                    <li><a href="newApp">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;创建应用
+                    </a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#sub3" data-toggle="collapse">
+                    &nbsp;<span class="glyphicon glyphicon-book"></span>
+                    &nbsp;注册码管理
+                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                </a>
+                <ul id="sub3" class="nav collapse">
+                    <li><a href="newKeys" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-open"></span>&nbsp;&nbsp;生成注册码
+                    </a></li>
+                    <li><a href="manKeys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="glyphicon glyphicon-edit"></span>&nbsp;&nbsp;管理注册码
+                    </a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<script type="text/javascript" src="/js/angular.min.js"></script>
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/App.js"></script>
+
+
+<!--主要内容-->
+<div class="page_main" >
+    {{{body}}}
+</div>
+
+
+
+
+</body>
+</html>

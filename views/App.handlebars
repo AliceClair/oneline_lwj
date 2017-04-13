@@ -1,0 +1,50 @@
+
+<form class="form-horizontal" role="form">
+    <div class="form-group  has-feedback ">
+        <div class="col-sm-1" style="margin-top: 8px;">
+            {{ applyAppName }}
+        </div>
+
+        <label class="col-sm-2 control-label" id = 'appMark'>应用密钥：</label>
+
+        <!--autofocuns:当页面加载完之后自动获得焦点;disabled:为禁止写入;readonly:只读,不可填写-->
+        <div class="col-sm-6" style="margin-top: 7px;margin-left: -20px;" >
+            {{ mark }}
+        </div>
+    </div>
+</form>
+<hr style="height:10px;border:none;border-top:1px solid #b7cbcd;" />
+
+<div  ng-controller="ctrl">
+    <!--ng-show里边的表达式为真时就会显示内容，反之则不显示-->
+    <table class="table" ng-show="cart.length">
+        <thead>
+        <tr>
+            <th>设备标识码</th>
+            <th>注册码类型</th>
+            <th>注册码</th>
+            <th>激活时间</th>
+            <th>剩余时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in cart">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.price}}</td>
+            <td></td>
+            <td></td>
+            <td>
+                <button type="button" ng-click="remove(item.id)" class="btn btn-success">移除</button>
+            </td>
+        </tr>
+        <!--<tr>-->
+            <!--&lt;!&ndash;ng-click = {};赋值为空对象，即可删除内部全部内容&ndash;&gt;-->
+            <!--<td colspan="5"><button type="button" ng-click="cart = {}" class="btn btn-danger pull-right">一键清除</button></td>-->
+            <!--<td></td>-->
+        <!--</tr>-->
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript" src="/js/App.js"></script>

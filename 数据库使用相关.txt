@@ -1,0 +1,40 @@
+﻿数据库  Mongodb
+
+教程参考mongodb菜鸟教程
+
+一、建立mongodb数据库
+1.安装mongodb数据库
+2.创建文件夹  D:\mongodata\dbConf\mongodb.log
+  创建文件夹  D:\mongodata\db
+3.在mongodb安装目录的bin文件夹下执行  .\mongod.exe --bind_ip 127.0.0.1 --logpath "C:\mongodata\dbConf\mongodb.log" --logappend --dbpath "C:\mongodata\db" --port 27017 --serviceName "onelineMongodb" --serviceDisplayName "oneline" --install ，
+从而建立了数据库启动服务
+4.在控制面板 管理工具  服务 找到建立的服务并且启动服务
+
+二、创建数据库
+use oneline  -->创建名为“oneline"的数据库
+db.oneline.insert({"name": "oneline system"})  --> 向数据库oneline中插入内容"name": "oneline system"
+
+三、删除数据库
+use oneline  --> 进入要删除的数据库 
+db.dropDatabase() 回车 --> 删除oneline数据库
+
+四、插入文档
+方法一：
+db.col.insert() --> 在当前数据库插入名为col的集合
+db.col.find()  --> 查看插入的集合col
+方法二：
+document = ({})  --> 先将内容赋给一个变量
+db.col.insert(document)  --> 插入名为col的集合
+
+五、更新文档
+db.col.update({原内容},{$set:{更新的内容}})
+
+六、查询文档
+db.col.find().pretty()  --> 查询名为col的文档
+db.col.find({ 键值对1,键值对2 }).pretty()  --> 查询既包含键值对1，又包含键值对2的col文档
+db.col.find({$or:[{键值对1},{键值对2}]).pretty()  --> 查询既包含键值对1，又包含键值对2的col文档
+
+附：常用命令
+1、db  --> 查看当前所在数据库
+2、show dbs  --> 查看已存在的数据库
+3、use test  --> 切换到名为test的数据库

@@ -1,0 +1,31 @@
+<style>
+    .divNewApp{
+        width: 550px;
+        height: 330px;
+        background-color: #f4fcff;
+        border: solid 2px #c9efe8;
+        box-shadow: 20px -20px 30px #485759;
+        text-align: center;
+        margin: 75px auto;
+    }
+</style>
+
+
+<div class="divNewApp" >
+    <form class="form-horizontal" role="form" action="newApp" method="post">
+        <div class="form-group  form-group-lg has-feedback "  style="margin-top: 65px;">
+
+            <label class="col-sm-4 control-label">应用名称：</label>
+            <!--autofocuns:当页面加载完之后自动获得焦点;disabled:为禁止写入;readonly:只读,不可填写-->
+            <div class="col-sm-6">
+                <input type="text" required="" placeholder="" class="form-control" name="newAppName" autofocus>
+                <span class="glyphicon glyphicon-star form-control-feedback"></span>
+            </div>
+        </div>
+        <div>{{lengtherr}}</div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info col-sm-2" style="margin-top: 70px;margin-left: 130px;">创建</button>
+            <button type="reset" class="btn btn-info col-sm-2"  style="margin-top: 70px;margin-left: 120px;">取消</button>
+        </div>
+    </form>
+</div>

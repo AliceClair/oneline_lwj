@@ -1,0 +1,4 @@
+1、进入nodejs文件夹，使用管理员权限在cmd中直接运行 npm
+2、运行：npm install -g nodemon
+3、进入含有oneline.javascript的文件夹，运行nodemon oneline.js，查看缺少的框架，
+   使用npm install XXX的形式安装，安装后再次运行nodemon oneline.js，根据提示安装，直到全部安装

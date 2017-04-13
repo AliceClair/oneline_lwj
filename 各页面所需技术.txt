@@ -1,0 +1,47 @@
+登录页 login.handlebars
+1、登录按钮：
+①如何判断登录账号为已有账号？
+答：用mongodb数据库，验证是否含有用户信息；routes/index.js
+	在oneline.js中app.post('/account',routes.doLogin); 
+	"/account"是在html页面中<form action='account'>的提交到的入口；即action把account提交到"/account"；
+	"doLogin"是在routes/index.js中exports.doLogin暴露出doLogin方法，程序从app.post进入到doLogin方法并执行；
+②当账号密码不匹配时显示提示信息？
+答：在body中先导入ng-app、ng-controller，在需要隐藏的部分中添加ng-hide="value"或ng-show="value"；
+	再写controller控制器。控制ng-hide/ng-show中的变量value从而控制文本的显示与隐藏；
+③、导入ng-app无效果：
+答：由于页面是全部加载完DOM再用angular编译，所以自己的脚本有可能在angular开始编译DOM之前运行，
+	所以需要把angular.js在自己的js文件之前引入；
+
+注册页 register.handlebars
+1、短信验证或图片验证？
+答：
+2、点击提交按钮，注册信息如何保存？
+答：用mongodb数据库，将表单页信息对应的name属性值保存入mongodb，
+	声明需要添加的信息，判断添加条件，添加newUser.save()；--> routes/index.js
+3、input的提示信息更漂亮？
+答：
+
+账户信息页 account.handlebars
+1、账号具体内容显示在页面上，获取用户的登录名？
+2、设置账号余额、当月用户数量、在线用户数量的值？---数据绑定？
+3、退出至登录页？
+
+创建应用页 newApp.handlebars
+1、点击创建按钮将创建的应用名称添加至左侧栏？
+##angular绑定事件，ng-click、ng-model
+
+应用页 App.handlebars
+1、应用密钥：生成账户名+8位随机大写字母。
+2、循环填入应用页信息（包含删除键）；此处只填入已被注册的注册码；
+
+注册码生成页 newKeys.handlebars
+1、获取生成数量，生成相应个数的注册码；
+2、点击生成，在manKeys页面产生订单号、应用名称、类型等信息；（循环产生，每生成一次添加一次）
+
+注册码管理页 manKeys.handlebars
+1、订单标号生成，获取“newKeys”页面的信息，并显示；
+
+查看注册码页 lookKeys.handlebars
+1、获取点击页的应用、注册码信息；
+2、获取注册码的使用状态；
+

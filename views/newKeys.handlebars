@@ -1,0 +1,75 @@
+<style>
+    .divNewApp{
+        width: 550px;
+        height: 330px;
+        background-color: #f4fcff;
+        border: solid 2px #c9efe8;
+        box-shadow: 20px -20px 30px #485759;
+        text-align: center;
+        margin: 75px auto;
+    }
+</style>
+
+
+<div class="divNewApp" >
+    <form class="form-horizontal" role="form" name="myForm"  action="addKey">
+        <div class="form-group has-feedback " style="margin-top: 65px;">
+            <label class="col-sm-4 control-label">应用名称：</label>
+            <div class="col-sm-6">
+                <div class="form-group">
+                        <select  name="selectname" id="selectApp" class="form-control"  autofocus="autofocus" onfocus="application()" >
+                            <option id = "application"></option>
+                        </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group has-feedback " style="margin-top: 15px;">
+            <label class="col-sm-4 control-label">注册码类型：</label>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <select name="selecttype" class="form-control" >
+                        <option value="7">7天</option>
+                        <option value="30">30天</option>
+                        <option value="120">120天</option>
+                        <option value="360">360天</option>
+                        <option value="9999">永久</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="form-group" ng-class="{'has-error':myForm.keysQ.$dirty && myForm.keysQ.$invalid}">-->
+            <!--<label class="col-sm-3 control-label">生成数量</label>-->
+            <!--<div class="col-sm-5">-->
+                <!--<input type="number" name="keysQ" ng-minlength="1" ng-maxlength="3" ng-required="true" ng-model="data.keysQ" class="form-control" placeholder="请输入生成注册码数量">-->
+                <!--<div ng-show="myForm.keysQ.$dirty && myForm.keysQ.$error.minlength" class="alert alert-warning help-block">-->
+                    <!--一次最少生成1个注册码！-->
+                <!--</div>-->
+                <!--<div ng-show="myForm.keysQ.$dirty && myForm.keysQ.$error.maxlength" class="alert alert-warning help-block">-->
+                    <!--一次最多可生成99个注册码！-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div class="form-group has-feedback " style="margin-top: 15px;">
+            <label class="col-sm-4 control-label">生成数量：</label>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <select name="selectnum" class="form-control" >
+                        <option value="1">1个</option>
+                        <option value="2">2个</option>
+                        <option value="5">5个</option>
+                        <option value="10">10个</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-info col-sm-2" style="margin-top: 30px;margin-left: 140px;">生成</button>
+            <button type="button" class="btn btn-info col-sm-2"  style="margin-top: 30px;margin-left: 110px;">取消</button>
+        </div>
+    </form>
+</div>
+
