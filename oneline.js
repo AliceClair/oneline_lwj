@@ -87,15 +87,12 @@ app.get('/',routes.index);//登录页面
 app.get('/loginregister',routes.reg); //首页注册按钮
 app.get('/register',routes.butttonReg);//注册页刷新
 app.post('/register',routes.doReg);//注册页注册按钮
-app.get('/forgetPsd',routes.forgetPsdw);//不携带数据的跳转至忘记密码页面
-app.post('/forgetPsd',routes.forgetPsd);//携带数据的跳转至忘记密码页面
 app.get('/account',routes.login);//用户登录
 app.post('/account',routes.doLogin);//登录成功后跳转至账户信息页
-app.get('/changePsd',routes.changePsd);//不携带数据的跳转至修改密码页面
-app.post('/changePsd',routes.changePsd);//进入修改密码页面
 app.get('/newApp',routes.newApp);//进入创建应用页
 app.post('/newApp',routes.donewApp);//创建应用页
 app.get('/App',routes.App);//应用页
+app.get('/changePsd',routes.changePsd);
 app.get('/newKeys',routes.newKeys);//注册码生成页
 app.get('/addKey',routes.addKey);//创建注册码按钮，并跳转到注册码管理页面
 app.get('/manKeys',routes.manKeys);//注册码管理页

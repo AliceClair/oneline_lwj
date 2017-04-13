@@ -19,6 +19,7 @@ exports.index = function (req,res) {
     res.render('login',{ layout: null});
 };
 
+
 /**
  * 首页跳转注册页面get
  */
@@ -93,16 +94,6 @@ exports.doLogin=function(req,res){
             res.render("account", {layout: 'layout',userName:req.session.userName});
     })
 };
-
-// 修改密码页面--changePsdw get
-exports.changePsd=function(req,res){
-    res.render('changePsd', {layout: 'layout' });
-};
-// 修改密码页面--changePsd post
-exports.changePsd=function(req,res){
-    res.render('changePsd', {layout: 'layout' });
-};
-
 
 exports.newApp = function (req,res) {
         res.render('newApp',{ layout: 'layout'});
@@ -254,6 +245,11 @@ exports.logout = function (req,res) {
     req.session.userName ="";
     res.redirect("/");
 }
+
+exports.changePsd = function(req,res){
+    res.render('changePsd',{ layout: 'layout'});
+}
+
 
 // //生成20位随机字符串
 function s20(){
